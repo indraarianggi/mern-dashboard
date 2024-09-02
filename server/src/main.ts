@@ -1,9 +1,14 @@
+import "module-alias/register";
 import express from "express";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import cors from "cors";
 import helmet from "helmet";
 import morgan from "morgan";
+
+/* data imports */
+import { User } from "@/models";
+import { dataUser } from "@/data";
 
 import {
   clientRoutes,
@@ -35,6 +40,10 @@ mongoose
   .connect(env.MONGO_URL)
   .then(() => {
     app.listen(PORT, () => console.log(`Server running at port: ${PORT}`));
+
+    /* ONLY ADD DATA ONE TIME */
+    // inject data to database
+    // User.insertMany(dataUser);
   })
   .catch((error) => {
     console.log(`${error} did not connect`);
