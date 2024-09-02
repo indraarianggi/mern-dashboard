@@ -1,0 +1,2 @@
+### Get User By Id
+GET http://localhost:5001/general/users/63701cc1f03239b7f700000e

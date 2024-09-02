@@ -1,0 +1,5 @@
+### Get All Products With Stat
+GET http://localhost:5001/client/products
+
+### Get All Customers
+GET http://localhost:5001/client/customers

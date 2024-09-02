@@ -1,4 +1,4 @@
-import { IResponse, IUser } from "@/types";
+import { IProductWithStat, IResponse, IUser } from "@/types";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const api = createApi({
@@ -6,13 +6,22 @@ export const api = createApi({
     baseUrl: process.env.REACT_APP_BASE_URL,
   }),
   reducerPath: "adminAPi",
-  tagTypes: ["User"],
+  tagTypes: ["User", "Product", "Customers"],
   endpoints: (build) => ({
     getUser: build.query<IResponse<IUser>, string>({
-      query: (id) => `general/user/${id}`,
+      query: (id) => `general/users/${id}`,
       providesTags: ["User"],
+    }),
+    getProducts: build.query<IResponse<IProductWithStat[]>, void>({
+      query: () => "client/products",
+      providesTags: ["Product"],
+    }),
+    getCustomers: build.query<IResponse<IUser[]>, void>({
+      query: () => "client/customers",
+      providesTags: ["Customers"],
     }),
   }),
 });
 
-export const { useGetUserQuery } = api;
+export const { useGetUserQuery, useGetProductsQuery, useGetCustomersQuery } =
+  api;

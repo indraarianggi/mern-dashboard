@@ -4,7 +4,7 @@ import { CssBaseline, ThemeProvider } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
 
 import { Layout } from "@/components";
-import { DashboardPage } from "@/pages";
+import { CustomersPage, DashboardPage, ProductsPage } from "@/pages";
 import { useAppSelector } from "@/states";
 import { themeSettings } from "@/themes";
 
@@ -22,6 +22,8 @@ function App() {
             <Route element={<Layout />}>
               <Route path="/" element={<Navigate to="/dashboard" replace />} />
               <Route path="/dashboard" element={<DashboardPage />} />
+              <Route path="/products" element={<ProductsPage />} />
+              <Route path="/customers" element={<CustomersPage />} />
             </Route>
           </Routes>
         </ThemeProvider>

@@ -1,32 +1,29 @@
-export interface IUser {
-  _id: string;
+export interface IDocumentResult<T> {
+  _doc: T;
+}
+
+export interface IUser extends IDocumentResult<IUser> {
   name: string;
   email: string;
   password: string;
   city: string;
-  state: string | null;
+  state: string;
   occupation: string;
   phoneNumber: string;
   transactions: string[];
-  role: string;
-  createdAt: string;
-  updatedAt: string;
+  role: "user" | "admin" | "superadmin";
 }
 
-export interface IProduct {
-  _id: string;
+export interface IProduct extends IDocumentResult<IProduct> {
   name: string;
   price: number;
   description: string;
   category: string;
   rating: number;
   supply: number;
-  createdAt: string;
-  updatedAt: string;
 }
 
-export interface IProductStat {
-  _id: string;
+export interface IProductStat extends IDocumentResult<IProductStat> {
   productId: string;
   yearlySalesTotal: number;
   yearlyTotalSoldUnits: number;
@@ -45,8 +42,4 @@ export interface IDailyData {
   date: string;
   totalSales: number;
   totalUnits: number;
-}
-
-export interface IProductWithStat extends IProduct {
-  stat: IProductStat;
 }
