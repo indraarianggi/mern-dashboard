@@ -1,4 +1,11 @@
-import { IProductWithStat, IResponse, IUser } from "@/types";
+import {
+  IGetTransactionsParams,
+  IProductWithStat,
+  IResponse,
+  IResponseWithPagination,
+  ITransaction,
+  IUser,
+} from "@/types";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const api = createApi({
@@ -6,7 +13,7 @@ export const api = createApi({
     baseUrl: process.env.REACT_APP_BASE_URL,
   }),
   reducerPath: "adminAPi",
-  tagTypes: ["User", "Product", "Customers"],
+  tagTypes: ["User", "Product", "Customers", "Transactions"],
   endpoints: (build) => ({
     getUser: build.query<IResponse<IUser>, string>({
       query: (id) => `general/users/${id}`,
@@ -20,8 +27,23 @@ export const api = createApi({
       query: () => "client/customers",
       providesTags: ["Customers"],
     }),
+    getTransactions: build.query<
+      IResponseWithPagination<ITransaction>,
+      IGetTransactionsParams
+    >({
+      query: ({ page, pageSize, sort, search }) => ({
+        url: "client/transactions",
+        method: "GET",
+        params: { page, pageSize, sort, search },
+      }),
+      providesTags: ["Transactions"],
+    }),
   }),
 });
 
-export const { useGetUserQuery, useGetProductsQuery, useGetCustomersQuery } =
-  api;
+export const {
+  useGetUserQuery,
+  useGetProductsQuery,
+  useGetCustomersQuery,
+  useGetTransactionsQuery,
+} = api;

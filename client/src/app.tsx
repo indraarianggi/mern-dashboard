@@ -4,7 +4,12 @@ import { CssBaseline, ThemeProvider } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
 
 import { Layout } from "@/components";
-import { CustomersPage, DashboardPage, ProductsPage } from "@/pages";
+import {
+  CustomersPage,
+  DashboardPage,
+  ProductsPage,
+  TransactionsPage,
+} from "@/pages";
 import { useAppSelector } from "@/states";
 import { themeSettings } from "@/themes";
 
@@ -24,6 +29,7 @@ function App() {
               <Route path="/dashboard" element={<DashboardPage />} />
               <Route path="/products" element={<ProductsPage />} />
               <Route path="/customers" element={<CustomersPage />} />
+              <Route path="/transactions" element={<TransactionsPage />} />
             </Route>
           </Routes>
         </ThemeProvider>

@@ -43,3 +43,9 @@ export interface IDailyData {
   totalSales: number;
   totalUnits: number;
 }
+
+export interface ITransaction extends IDocumentResult<ITransaction> {
+  userId: string;
+  cost: string;
+  products: string[];
+}

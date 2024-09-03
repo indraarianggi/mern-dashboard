@@ -33,6 +33,8 @@ export interface IProductStat {
   year: number;
   monthlyData: IMonthlyData[];
   dailyData: IDailyData;
+  createdAt: string;
+  updatedAt: string;
 }
 
 export interface IMonthlyData {
@@ -49,4 +51,13 @@ export interface IDailyData {
 
 export interface IProductWithStat extends IProduct {
   stat: IProductStat;
+}
+
+export interface ITransaction {
+  _id: string;
+  userId: string;
+  cost: string;
+  products: string[];
+  createdAt: string;
+  updatedAt: string;
 }

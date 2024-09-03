@@ -3,3 +3,6 @@ GET http://localhost:5001/client/products
 
 ### Get All Customers
 GET http://localhost:5001/client/customers
+
+### Get All Transactions (With Pagination)
+GET http://localhost:5001/client/transactions
