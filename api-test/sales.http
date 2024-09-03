@@ -1,0 +1,2 @@
+### Get All Sales
+GET http://localhost:5001/sales

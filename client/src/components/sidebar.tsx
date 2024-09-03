@@ -30,7 +30,7 @@ import {
   PieChartOutlined,
 } from "@mui/icons-material";
 
-import profileImage from "@/assets/profile.jpeg";
+import profileImage from "@/assets/profile.jpg";
 import { FlexBetween } from "@/components";
 import { IUser } from "@/types";
 

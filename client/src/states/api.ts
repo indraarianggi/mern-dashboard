@@ -1,8 +1,10 @@
 import {
+  IGeography,
   IGetTransactionsParams,
   IProductWithStat,
   IResponse,
   IResponseWithPagination,
+  ISales,
   ITransaction,
   IUser,
 } from "@/types";
@@ -13,7 +15,14 @@ export const api = createApi({
     baseUrl: process.env.REACT_APP_BASE_URL,
   }),
   reducerPath: "adminAPi",
-  tagTypes: ["User", "Product", "Customers", "Transactions"],
+  tagTypes: [
+    "User",
+    "Product",
+    "Customers",
+    "Transactions",
+    "Geography",
+    "Sales",
+  ],
   endpoints: (build) => ({
     getUser: build.query<IResponse<IUser>, string>({
       query: (id) => `general/users/${id}`,
@@ -38,6 +47,14 @@ export const api = createApi({
       }),
       providesTags: ["Transactions"],
     }),
+    getGeography: build.query<IResponse<IGeography[]>, void>({
+      query: () => "client/geography",
+      providesTags: ["Geography"],
+    }),
+    getSales: build.query<IResponse<ISales>, void>({
+      query: () => "sales",
+      providesTags: ["Sales"],
+    }),
   }),
 });
 
@@ -46,4 +63,6 @@ export const {
   useGetProductsQuery,
   useGetCustomersQuery,
   useGetTransactionsQuery,
+  useGetGeographyQuery,
+  useGetSalesQuery,
 } = api;

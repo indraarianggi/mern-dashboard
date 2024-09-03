@@ -35,6 +35,9 @@ importers:
       morgan:
         specifier: ^1.10.0
         version: 1.10.0
+      ts-country-iso-2-to-3:
+        specifier: ^1.2.0
+        version: 1.2.0
     devDependencies:
       '@types/body-parser':
         specifier: ^1.19.5
@@ -557,6 +560,9 @@ packages:
   tr46@4.1.1:
     resolution: {integrity: sha512-2lv/66T7e5yNyhAAC4NaKe5nVavzuGJQVVtRYLyQ2OI8tsJ61PMLlelehb0wi2Hx6+hT/OJUWZcw8MjlSRnxvw==}
     engines: {node: '>=14'}
+
+  ts-country-iso-2-to-3@1.2.0:
+    resolution: {integrity: sha512-8hUa1kvb6qD17qiaI046YrMZn/MDBob0BQC33JUH/tOvulYg/pMG2CGltGJKtYsddQu4k+Fe81pZrz+UQGfeBA==}
 
   tslib@2.6.2:
     resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
@@ -1128,6 +1134,8 @@ snapshots:
   tr46@4.1.1:
     dependencies:
       punycode: 2.3.1
+
+  ts-country-iso-2-to-3@1.2.0: {}
 
   tslib@2.6.2: {}
 

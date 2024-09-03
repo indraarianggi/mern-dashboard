@@ -12,7 +12,6 @@ export const Layout = () => {
 
   const userId = useAppSelector((state) => state.global.userId);
   const { data: userData } = useGetUserQuery(userId);
-  console.log(userData);
 
   return (
     <Box display={isNonMobile ? "flex" : "block"} width="100%" height="100%">

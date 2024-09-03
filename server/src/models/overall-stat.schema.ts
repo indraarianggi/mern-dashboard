@@ -1,10 +1,10 @@
 import { Schema, model } from "mongoose";
 
-import { IProductStat } from "@/types";
+import { IOverallStat } from "@/types";
 
-const productStatSchema = new Schema<IProductStat>(
+const overallStatSchema = new Schema<IOverallStat>(
   {
-    productId: String,
+    totalCustomers: Number,
     yearlySalesTotal: Number,
     yearlyTotalSoldUnits: Number,
     year: Number,
@@ -22,10 +22,14 @@ const productStatSchema = new Schema<IProductStat>(
         totalUnits: Number,
       },
     ],
+    salesByCategory: {
+      type: Map,
+      of: Number,
+    },
   },
   {
     timestamps: true,
   }
 );
 
-export const ProductStat = model("ProductStat", productStatSchema);
+export const OverallStat = model("OverallStat", overallStatSchema);

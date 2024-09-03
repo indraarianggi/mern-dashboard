@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import { getCountryISO3 } from "ts-country-iso-2-to-3";
 
 import { Product, ProductStat, Transaction, User } from "@/models";
 import { FormattedSort } from "@/types";
@@ -97,5 +98,38 @@ export const getTransactions = async (req: Request, res: Response) => {
   } catch (error) {
     console.error(error);
     res.status(404).json({ message: "Failed to get transactions" });
+  }
+};
+
+export const getGeography = async (req: Request, res: Response) => {
+  try {
+    const users = await User.find();
+
+    const mappedLocations = users.reduce((acc, currentUser) => {
+      const { country } = currentUser;
+      const countryISO3 = getCountryISO3(country);
+
+      if (!acc[countryISO3]) {
+        acc[countryISO3] = 0;
+      }
+
+      acc[countryISO3]++;
+
+      return acc;
+    }, {} as { [key: string]: number });
+
+    const formattedLocations = Object.entries(mappedLocations).map(
+      ([countryKey, count]) => {
+        return { id: countryKey, value: count };
+      }
+    );
+
+    res.status(200).json({
+      message: "Successfully get geography",
+      data: formattedLocations,
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(404).json({ message: "Failed to get geography" });
   }
 };

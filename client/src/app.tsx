@@ -6,8 +6,12 @@ import { createTheme } from "@mui/material/styles";
 import { Layout } from "@/components";
 import {
   CustomersPage,
+  DailyPage,
   DashboardPage,
+  GeographyPage,
+  MonthlyPage,
   ProductsPage,
+  SalesOverviewPage,
   TransactionsPage,
 } from "@/pages";
 import { useAppSelector } from "@/states";
@@ -30,6 +34,10 @@ function App() {
               <Route path="/products" element={<ProductsPage />} />
               <Route path="/customers" element={<CustomersPage />} />
               <Route path="/transactions" element={<TransactionsPage />} />
+              <Route path="/geography" element={<GeographyPage />} />
+              <Route path="/overview" element={<SalesOverviewPage />} />
+              <Route path="/daily" element={<DailyPage />} />
+              <Route path="/monthly" element={<MonthlyPage />} />
             </Route>
           </Routes>
         </ThemeProvider>

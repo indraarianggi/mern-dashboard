@@ -5,6 +5,7 @@ export interface IUser {
   password: string;
   city: string;
   state: string | null;
+  country: string;
   occupation: string;
   phoneNumber: string;
   transactions: string[];
@@ -32,7 +33,7 @@ export interface IProductStat {
   yearlyTotalSoldUnits: number;
   year: number;
   monthlyData: IMonthlyData[];
-  dailyData: IDailyData;
+  dailyData: IDailyData[];
   createdAt: string;
   updatedAt: string;
 }
@@ -58,6 +59,24 @@ export interface ITransaction {
   userId: string;
   cost: string;
   products: string[];
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface IGeography {
+  id: string;
+  value: number;
+}
+
+export interface ISales {
+  _id: string;
+  totalCustomers: number;
+  yearlySalesTotal: number;
+  yearlyTotalSoldUnits: number;
+  year: number;
+  monthlyData: IMonthlyData[];
+  dailyData: IDailyData[];
+  salesByCategory: object;
   createdAt: string;
   updatedAt: string;
 }

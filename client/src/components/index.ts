@@ -3,5 +3,6 @@ export * from "./flex-between";
 export * from "./header";
 export * from "./layout";
 export * from "./navbar";
+export * from "./overview-chart";
 export * from "./product-item";
 export * from "./sidebar";

@@ -68,7 +68,7 @@ export default function Transactions() {
       <Header title="TRANSACTIONS" subtitle="Entire list of transactions" />
       <Box
         mt="40px"
-        height="80vh"
+        height="75vh"
         sx={{
           "& .MuiDataGrid-root": {
             border: "none",

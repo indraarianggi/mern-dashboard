@@ -23,6 +23,7 @@ const userSchema = new Schema<IUser>(
     },
     city: String,
     state: String,
+    country: String,
     occupation: String,
     phoneNumber: String,
     transactions: Array,
