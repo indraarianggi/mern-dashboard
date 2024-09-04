@@ -61,7 +61,7 @@ export default function Customers() {
           "& .MuiDataGrid-cell": {
             borderBottom: "none",
           },
-          "& .MuiDataGrid-columnHeaders": {
+          "& .MuiDataGrid-columnHeader": {
             backgroundColor: theme.palette.background.alt,
             color: theme.palette.secondary[100],
             borderBottom: "none",

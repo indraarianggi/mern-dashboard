@@ -80,3 +80,31 @@ export interface ISales {
   createdAt: string;
   updatedAt: string;
 }
+
+export interface IAffiliateStat {
+  _id: string;
+  userId: string;
+  affiliateSales: string[];
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface IUserWithAffiliateStat extends IUser {
+  affiliateStats: IAffiliateStat;
+}
+
+export interface IUserPerformance {
+  user: IUserWithAffiliateStat;
+  sales: ITransaction[];
+}
+
+export interface IDashboardStat {
+  totalCustomers: number;
+  yearlyTotalSoldUnits: number;
+  yearlySalesTotal: number;
+  monthlyData: IMonthlyData[];
+  salesByCategory: object;
+  thisMonthStats: IMonthlyData;
+  todayStats: IDailyData;
+  transactions: ITransaction[];
+}

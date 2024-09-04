@@ -7,8 +7,15 @@ import helmet from "helmet";
 import morgan from "morgan";
 
 /* data imports */
-import { OverallStat, Product, ProductStat, User } from "@/models";
 import {
+  AffiliateStat,
+  OverallStat,
+  Product,
+  ProductStat,
+  User,
+} from "@/models";
+import {
+  dataAffiliateStat,
   dataOverallStat,
   dataProduct,
   dataProductStat,
@@ -52,6 +59,7 @@ mongoose
     // Product.insertMany(dataProduct);
     // ProductStat.insertMany(dataProductStat);
     // OverallStat.insertMany(dataOverallStat);
+    // AffiliateStat.insertMany(dataAffiliateStat);
   })
   .catch((error) => {
     console.log(`${error} did not connect`);

@@ -12,6 +12,7 @@ import {
   DashboardPage,
   GeographyPage,
   MonthlyPage,
+  PerformancePage,
   ProductsPage,
   SalesOverviewPage,
   TransactionsPage,
@@ -42,6 +43,7 @@ function App() {
               <Route path="/monthly" element={<MonthlyPage />} />
               <Route path="/breakdown" element={<BreakdownPage />} />
               <Route path="/admin" element={<AdminPage />} />
+              <Route path="/performance" element={<PerformancePage />} />
             </Route>
           </Routes>
         </ThemeProvider>

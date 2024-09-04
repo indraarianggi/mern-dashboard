@@ -1,4 +1,5 @@
 import {
+  IDashboardStat,
   IGeography,
   IGetTransactionsParams,
   IProductWithStat,
@@ -7,6 +8,7 @@ import {
   ISales,
   ITransaction,
   IUser,
+  IUserPerformance,
 } from "@/types";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
@@ -23,6 +25,8 @@ export const api = createApi({
     "Geography",
     "Sales",
     "Admins",
+    "Performance",
+    "Dashboard",
   ],
   endpoints: (build) => ({
     getUser: build.query<IResponse<IUser>, string>({
@@ -60,6 +64,14 @@ export const api = createApi({
       query: () => "management/admins",
       providesTags: ["Admins"],
     }),
+    getUserPerformance: build.query<IResponse<IUserPerformance>, string>({
+      query: (userId) => `management/performance/${userId}`,
+      providesTags: ["Performance"],
+    }),
+    getDashboardStats: build.query<IResponse<IDashboardStat>, void>({
+      query: () => "general/dashboard",
+      providesTags: ["Dashboard"],
+    }),
   }),
 });
 
@@ -71,4 +83,6 @@ export const {
   useGetGeographyQuery,
   useGetSalesQuery,
   useGetAdminsQuery,
+  useGetUserPerformanceQuery,
+  useGetDashboardStatsQuery,
 } = api;

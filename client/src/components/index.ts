@@ -8,3 +8,4 @@ export * from "./navbar";
 export * from "./overview-chart";
 export * from "./product-item";
 export * from "./sidebar";
+export * from "./stat-box";

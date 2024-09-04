@@ -60,3 +60,8 @@ export interface IOverallStat extends IDocumentResult<IOverallStat> {
   dailyData: IDailyData[];
   salesByCategory: object;
 }
+
+export interface IAffiliateStat extends IDocumentResult<IAffiliateStat> {
+  userId: any; // string
+  affiliateSales: string[];
+}

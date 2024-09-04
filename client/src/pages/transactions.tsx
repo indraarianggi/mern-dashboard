@@ -76,7 +76,7 @@ export default function Transactions() {
           "& .MuiDataGrid-cell": {
             borderBottom: "none",
           },
-          "& .MuiDataGrid-columnHeaders": {
+          "& .MuiDataGrid-columnHeader": {
             backgroundColor: theme.palette.background.alt,
             color: theme.palette.secondary[100],
             borderBottom: "none",

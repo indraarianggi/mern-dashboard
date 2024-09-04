@@ -1,2 +1,5 @@
 ### Get All Admins
 GET http://localhost:5001/management/admins
+
+### Get User Performance
+GET http://localhost:5001/management/performance/63701cc1f03239b7f700000e
