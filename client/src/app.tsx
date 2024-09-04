@@ -5,6 +5,8 @@ import { createTheme } from "@mui/material/styles";
 
 import { Layout } from "@/components";
 import {
+  AdminPage,
+  BreakdownPage,
   CustomersPage,
   DailyPage,
   DashboardPage,
@@ -38,6 +40,8 @@ function App() {
               <Route path="/overview" element={<SalesOverviewPage />} />
               <Route path="/daily" element={<DailyPage />} />
               <Route path="/monthly" element={<MonthlyPage />} />
+              <Route path="/breakdown" element={<BreakdownPage />} />
+              <Route path="/admin" element={<AdminPage />} />
             </Route>
           </Routes>
         </ThemeProvider>

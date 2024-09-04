@@ -1,3 +1,5 @@
+export { default as AdminPage } from "./admin";
+export { default as BreakdownPage } from "./breakdown";
 export { default as CustomersPage } from "./customers";
 export { default as DailyPage } from "./daily";
 export { default as DashboardPage } from "./dashboard";

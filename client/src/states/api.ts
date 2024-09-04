@@ -22,6 +22,7 @@ export const api = createApi({
     "Transactions",
     "Geography",
     "Sales",
+    "Admins",
   ],
   endpoints: (build) => ({
     getUser: build.query<IResponse<IUser>, string>({
@@ -55,6 +56,10 @@ export const api = createApi({
       query: () => "sales",
       providesTags: ["Sales"],
     }),
+    getAdmins: build.query<IResponse<IUser[]>, void>({
+      query: () => "management/admins",
+      providesTags: ["Admins"],
+    }),
   }),
 });
 
@@ -65,4 +70,5 @@ export const {
   useGetTransactionsQuery,
   useGetGeographyQuery,
   useGetSalesQuery,
+  useGetAdminsQuery,
 } = api;

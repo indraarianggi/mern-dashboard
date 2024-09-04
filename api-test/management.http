@@ -1,0 +1,2 @@
+### Get All Admins
+GET http://localhost:5001/management/admins
